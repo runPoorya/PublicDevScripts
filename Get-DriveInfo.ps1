@@ -20,9 +20,13 @@
 [CmdletBinding()]
 param (
     [Parameter(Mandatory = $true)]
-    [ValidatePattern('^[A-Za-z]:$', ErrorMessage = 'DriveLetter must be a letter followed by a colon, e.g. "C:".')]
     [string]$DriveLetter
 )
+
+# Checked here (not with ValidatePattern) so the custom message also works in Windows PowerShell 5.1.
+if ($DriveLetter -notmatch '^[A-Za-z]:$') {
+    throw "DriveLetter must be a letter followed by a colon, e.g. ""C:"". Got: ""$DriveLetter"""
+}
 
 $disk = Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DeviceID='$($DriveLetter.ToUpper())'"
 
