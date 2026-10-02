@@ -41,3 +41,5 @@ if (-not $disk) {
     FreeGB  = [math]::Round($disk.FreeSpace / 1GB, 2)
     FreePct = if ($disk.Size) { [math]::Round(($disk.FreeSpace / $disk.Size) * 100, 1) } else { 0 }
 }
+
+# Use as a base and then parameter input can be diskInfo Query
