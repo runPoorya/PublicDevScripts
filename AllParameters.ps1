@@ -1,4 +1,5 @@
-<#
+﻿<#
+#new line
 .SYNOPSIS
     Template script showing the most common kinds of PowerShell parameters.
 
