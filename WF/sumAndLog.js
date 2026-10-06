@@ -1,3 +1,5 @@
+// on WF side
+
 return $input.all().map(item => {
   const { a, b, text } = item.json.body;
   const sum = Number(a) + Number(b);
