@@ -1,15 +1,20 @@
+# tolarates JSON string or already parsed object
 param(
-    [string]$InputJson = @'
-[
-  {
-    "text": "hiToWF",
-    "sum": 9
-  }
-]
-'@
+    $InputJson
 )
 
-$items = $InputJson | ConvertFrom-Json
+try {
+    if ($InputJson -is [string]) {
+        $items = $InputJson | ConvertFrom-Json
+    }
+    else {
+        $items = $InputJson
+    }
+}
+catch {
+    Write-Output "Invalid input, expected JSON: $InputJson"
+    exit 1
+}
 
 foreach ($item in @($items)) {
     Write-Output "Text: $($item.text)"
