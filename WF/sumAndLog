@@ -1,0 +1,13 @@
+return $input.all().map(item => {
+  const { a, b, text } = item.json.body;
+  const sum = Number(a) + Number(b);
+
+  console.log(text, sum); // helloWF 8
+
+  return {
+    json: {
+      text,
+      sum,
+    },
+  };
+});
