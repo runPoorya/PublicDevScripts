@@ -2,11 +2,11 @@
 	.SYNOPSIS
 	AI-QA: parameters with ASRDisplay flags that the script fixes (ReadOnly, Invisible), next to a plain parameter.
 	.PARAMETER ReadOnlyText
-	Protected by the script (ASRDisplay(ReadOnly)) with a default
+	View-only, fixed by the script (ASRDisplay(ReadOnly)), with a default
 	.PARAMETER ReadOnlyNumber
-	Protected by the script (ASRDisplay(ReadOnly)), integer
+	View-only, fixed by the script (ASRDisplay(ReadOnly)), integer
 	.PARAMETER ReadOnlyHidden
-	Protected and hidden by the script (ASRDisplay(ReadOnly,Invisible))
+	Hidden, fixed by the script (ASRDisplay(ReadOnly,Invisible))
 	.PARAMETER PlainText
 	No flags: control parameter, Editable by default
 	.NOTES
